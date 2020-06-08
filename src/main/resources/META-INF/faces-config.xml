@@ -672,7 +672,7 @@
     </component>
 
     <component>
-        <component-type>org.primefaces.component.PhotoCam</component-type>
+        <component-type>org.primefaces.component.photocam.PhotoCam</component-type>
         <component-class>org.primefaces.component.photocam.PhotoCam</component-class>
     </component>
 
@@ -1468,8 +1468,8 @@
             <renderer-class>org.primefaces.component.password.PasswordRenderer</renderer-class>
         </renderer>
         <renderer>
-            <component-family>org.primefaces.component</component-family>
-            <renderer-type>org.primefaces.component.PhotoCamRenderer</renderer-type>
+            <component-family>org.primefaces.component.photocam</component-family>
+            <renderer-type>org.primefaces.component.photocam.PhotoCamRenderer</renderer-type>
             <renderer-class>org.primefaces.component.photocam.PhotoCamRenderer</renderer-class>
         </renderer>
         <renderer>

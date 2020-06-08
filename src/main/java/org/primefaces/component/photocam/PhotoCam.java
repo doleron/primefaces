@@ -34,17 +34,17 @@ import javax.faces.context.FacesContext;
 @ResourceDependency(library = "primefaces", name = "photocam/photocam.js")
 public class PhotoCam extends PhotoCamBase {
 
-    public static final String COMPONENT_TYPE = "org.primefaces.component.PhotoCam";
+    public static final String COMPONENT_TYPE = "org.primefaces.component.photocam.PhotoCam";
 
     @Override
     public void broadcast(javax.faces.event.FacesEvent event) throws javax.faces.event.AbortProcessingException {
         super.broadcast(event);
 
         FacesContext facesContext = getFacesContext();
-        MethodExpression me = getListener();
+        MethodExpression methodExpression = getListener();
 
-        if (me != null && event instanceof org.primefaces.event.CaptureEvent) {
-            me.invoke(facesContext.getELContext(), new Object[]{event});
+        if (methodExpression != null && event instanceof org.primefaces.event.CaptureEvent) {
+            methodExpression.invoke(facesContext.getELContext(), new Object[]{event});
         }
     }
 }

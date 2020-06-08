@@ -42,9 +42,8 @@ public class PhotoCamHandler extends ComponentHandler {
         super(config);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
-    protected MetaRuleset createMetaRuleset(Class type) {
+    protected MetaRuleset createMetaRuleset(@SuppressWarnings("rawtypes") Class type) {
         MetaRuleset metaRuleset = super.createMetaRuleset(type);
 
         metaRuleset.addRule(LISTENER);

@@ -29,9 +29,9 @@ import org.primefaces.component.api.Widget;
 
 public abstract class PhotoCamBase extends UIInput implements Widget {
 
-    public static final String COMPONENT_FAMILY = "org.primefaces.component";
+    public static final String COMPONENT_FAMILY = "org.primefaces.component.photocam";
 
-    public static final String DEFAULT_RENDERER = "org.primefaces.component.PhotoCamRenderer";
+    public static final String DEFAULT_RENDERER = "org.primefaces.component.photocam.PhotoCamRenderer";
 
     public enum PropertyKeys {
 
@@ -47,8 +47,9 @@ public abstract class PhotoCamBase extends UIInput implements Widget {
         photoHeight,
         format,
         jpegQuality,
-        forceFlash,
-        autoStart
+        autoStart,
+        renderTimeout,
+        device
     }
 
     public PhotoCamBase() {
@@ -156,14 +157,6 @@ public abstract class PhotoCamBase extends UIInput implements Widget {
         getStateHelper().put(PropertyKeys.jpegQuality, jpegQuality);
     }
 
-    public boolean isForceFlash() {
-        return (Boolean) getStateHelper().eval(PropertyKeys.forceFlash, false);
-    }
-
-    public void setForceFlash(boolean forceFlash) {
-        getStateHelper().put(PropertyKeys.forceFlash, forceFlash);
-    }
-
     public boolean isAutoStart() {
         return (Boolean) getStateHelper().eval(PropertyKeys.autoStart, true);
     }
@@ -171,4 +164,21 @@ public abstract class PhotoCamBase extends UIInput implements Widget {
     public void setAutoStart(boolean autoStart) {
         getStateHelper().put(PropertyKeys.autoStart, autoStart);
     }
+
+    public boolean getRenderTimeout() {
+        return (Boolean) getStateHelper().eval(PropertyKeys.renderTimeout, "50");
+    }
+
+    public void setRenderTimeout(boolean renderTimeout) {
+        getStateHelper().put(PropertyKeys.renderTimeout, renderTimeout);
+    }
+
+    public boolean getDevice() {
+        return (Boolean) getStateHelper().eval(PropertyKeys.device, null);
+    }
+
+    public void setDevice(boolean device) {
+        getStateHelper().put(PropertyKeys.device, device);
+    }
+
 }

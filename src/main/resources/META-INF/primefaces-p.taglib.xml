@@ -18507,8 +18507,8 @@
         </description>
         <tag-name>photoCam</tag-name>
         <component>
-            <component-type>org.primefaces.component.PhotoCam</component-type>
-            <renderer-type>org.primefaces.component.PhotoCamRenderer</renderer-type>
+            <component-type>org.primefaces.component.photocam.PhotoCam</component-type>
+            <renderer-type>org.primefaces.component.photocam.PhotoCamRenderer</renderer-type>
             <handler-class>org.primefaces.component.photocam.PhotoCamHandler</handler-class>
         </component>
         <attribute>
@@ -18690,7 +18690,7 @@
         </attribute>
         <attribute>
             <description>
-                <![CDATA[Format of the image, valid values are "jpeg" default and png.]]>
+                <![CDATA[Format of the image, valid values are "jpeg" default, "jpg" and "png".]]>
             </description>
             <name>format</name>
             <required>false</required>
@@ -18706,19 +18706,27 @@
         </attribute>
         <attribute>
             <description>
-                <![CDATA[Enables always using flash fallback even in an HTML5 environment.]]>
-            </description>
-            <name>forceFlash</name>
-            <required>false</required>
-            <type>java.lang.Boolean</type>
-        </attribute>
-        <attribute>
-            <description>
                 <![CDATA[Disable camera start after initialize]]>
             </description>
             <name>autoStart</name>
             <required>false</required>
             <type>java.lang.Boolean</type>
+        </attribute>
+        <attribute>
+            <description>
+                <![CDATA[A device suggestion to be used to grab images]]>
+            </description>
+            <name>device</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>
+                <![CDATA[the timeout in mills governing the periodicity of cycle grab->rendering]]>
+            </description>
+            <name>renderTimeout</name>
+            <required>false</required>
+            <type>java.lang.Integer</type>
         </attribute>
     </tag>
     <tag>
